@@ -57,7 +57,8 @@ resource "aws_lb_listener_rule" "my_app_backend" {
 
 resource "aws_lb_target_group" "load-balancer-target-group-backend" {
   vpc_id   = aws_vpc.vpc.id
-  name     = "load-balancer-target-group"
+  target_type = "instance"
+  name     = "target-group-backend"
   port     = 80
   protocol = "HTTP"
 }
@@ -124,7 +125,9 @@ resource "aws_lb_listener_rule" "my_app_frontend" {
 
 resource "aws_lb_target_group" "load-balancer-target-group-frontend" {
   vpc_id   = aws_vpc.vpc.id
-  name     = "load-balancer-target-group"
+  target_type = "instance"
+  name     = "target-group-frontend"
   port     = 80
   protocol = "HTTP"
+
 }
