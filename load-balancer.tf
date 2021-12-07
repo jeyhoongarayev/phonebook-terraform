@@ -1,6 +1,6 @@
 resource "aws_lb" "auto-load-balancer-backend" {
   name               = "auto-load-balancer-backend"
-  internal           = false
+  internal           = true
   load_balancer_type = "application"
   security_groups    = [
     aws_security_group.webserver-security-group.id,
